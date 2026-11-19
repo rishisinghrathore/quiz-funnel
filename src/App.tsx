@@ -1,20 +1,17 @@
-import { Button } from "@/components/ui/button"
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
 
-export function App() {
+import BreezeHomePage from "@/pages/home/page"
+import Example1Page from "@/pages/example-1/page"
+
+function App() {
   return (
-    <div className="flex min-h-svh p-6">
-      <div className="flex max-w-md min-w-0 flex-col gap-4 text-sm leading-loose">
-        <div>
-          <h1 className="font-medium">Project ready!</h1>
-          <p>You may now add components and start building.</p>
-          <p>We&apos;ve already added the button component for you.</p>
-          <Button className="mt-2">Button</Button>
-        </div>
-        <div className="font-mono text-xs text-muted-foreground">
-          (Press <kbd>d</kbd> to toggle dark mode)
-        </div>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<BreezeHomePage />} />
+        <Route path="/example-1" element={<Example1Page />} />
+        <Route path="*" element={<Navigate to="/example-1" replace />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 
