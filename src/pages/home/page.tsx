@@ -181,7 +181,7 @@ function BreezeHomePage() {
 
         <RevealSection className="breeze-faq breeze-section" id="breeze-faq">
           <h2>Frequently asked questions</h2>
-          <div className="breeze-question-list">
+          <div className="breeze-question-list grid grid-cols-2 gap-4">
             {questions.map((question) => (
               <a className="breeze-question-card" href={question.href} target="_blank" rel="noreferrer" key={question.title}>
                 <div className="breeze-question-title">
